@@ -2,15 +2,6 @@ import edu.fcps.karel2.Display;
 import edu.fcps.karel2.Robot;
 
 public class Lab06Extension {
-
-     public static void dropBeepersAndMove (Robot arg) {
-     int beepers = 4;
-     while(beepers > 0) {		
-     arg.putBeeper();		
-     beepers--;
-     }
-     arg.move();
-     }
      
      public static void main(String[] args) {  	
      Display.openWorld("maps/CustomLab06.map");
@@ -38,11 +29,12 @@ public class Lab06Extension {
      manu8.putBeeper();		
      } 
      
-     dropBeepersAndMove(manu9);
-     dropBeepersAndMove(manu9);
-     dropBeepersAndMove(manu9);
-     dropBeepersAndMove(manu9);
-     dropBeepersAndMove(manu9);
+     for(int n = 5; n > 0; n--) {
+        for(int beepers = 4; beepers > 0; beepers--) {
+            manu9.putBeeper();
+        }
+        manu9.move();
+     }       
      
      while(manu10.frontIsClear()) {
          while(manu10.nextToABeeper()) {		
@@ -61,3 +53,17 @@ public class Lab06Extension {
      }
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
