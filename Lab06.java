@@ -14,7 +14,7 @@ public class Lab06 {
 
      public static void main(String[] args) {
      String filename = JOptionPane.showInputDialog("What robot map?");  	
-     Display.openWorld("maps/" + filename + ".map");
+     Display.openWorld("maps/tasks" + filename + ".map");
      Display.setSize(10, 10);
      Display.setSpeed(8);
      Robot manu1 = new Robot();
@@ -33,32 +33,35 @@ public class Lab06 {
      while(manu3.frontIsClear()) {
          manu3.move();
      }
-     while(manu4.frontIsClear()) {       
-         while(manu4.nextToABeeper()) {
+    
+    if(manu4.nextToABeeper()) {
              manu4.pickBeeper();
          }
-         manu4.move();
+     while(manu4.frontIsClear()) {       
+        manu4.move();
+         if(manu4.nextToABeeper()) {
+             manu4.pickBeeper();
+         }
      } 
-     if(!manu4.frontIsClear() && manu4.nextToABeeper()) {
-         manu4.pickBeeper();
-     }
+    
+    while(manu5.nextToABeeper()) {
+             manu5.pickBeeper();
+         }
      while(manu5.frontIsClear()) {       
+        manu5.move();
          while(manu5.nextToABeeper()) {
              manu5.pickBeeper();
          }
-         manu5.move();
-     }
-     while(!manu5.frontIsClear() && manu5.nextToABeeper()) {  
-         manu5.pickBeeper();
      } 
+
      while(manu6.nextToABeeper()) {  
          manu6.move();
-     }
-     if(manu6.frontIsClear()) {
-         manu6.move();
-         while(manu6.nextToABeeper()) {
-            manu6.move();
          }
-     }    
+     manu6.move();
+     while(manu6.nextToABeeper()) {
+         manu6.move();
+         }
+  
 }
 }
+
