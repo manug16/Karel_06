@@ -16,7 +16,7 @@ public class Lab06Extension {
      Robot manu12 = new Robot(1, 6, Display.EAST, Display.INFINITY); 
      
      int count = 0;
-     while(manu7.frontIsClear ()) {		
+     while(manu7.frontIsClear() && !manu7.nextToABeeper()) {		
      manu7.move();		
      count++;
      }
@@ -53,6 +53,19 @@ public class Lab06Extension {
      }
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
